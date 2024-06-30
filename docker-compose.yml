@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    environment:
+      - TELEGRAM_BOT_TOKEN_GALAKTIKA=${TELEGRAM_BOT_TOKEN_GALAKTIKA}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+    volumes:
+      - ./docs:/app/docs
+      - ./stored_index:/app/stored_index
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

@@ -1,0 +1,7 @@
+.venv
+chroma_db
+docs
+stored_index
+*log
+*json
+*lock
